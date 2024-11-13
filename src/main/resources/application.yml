@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: volunteer-app.asesordigital # Nuevo nombre de la aplicación
+
+  datasource:
+    url: jdbc:postgresql://db-postgresql-volunteerapp-do-user-10100634-0.e.db.ondigitalocean.com:25060/defaultdb
+    username: doadmin
+    password: AVNS_d2dvzrgSgfOd6J8wJPo
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: activistas.constructivos08@gmail.com
+    password: cdzanoeomcarrqze
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /swagger.v1+json
+  api:
+    title: VOLUNTEER APP BACKEND API
+    description: Servicios REST para la aplicación de voluntariado
+    version: 1.0
+
+social:
+  googleClientId: "142245667829-afpupoofnh363onmduragfrhduii4jj5.apps.googleusercontent.com"
+  googleClientSecret: "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"
+
+server:
+  port: 8085
+  servlet:
+    context-path: /api/v1/back-volunteer-app
+  forward-headers-strategy: native
+  tomcat:
+    max-file-size: 10MB
+    max-request-size: 10MB
+    max-http-form-post-size: 10485760
+
+
+request-mapping:
+  controller:
+    authentication: authentications
+    role: roles
+    user: users
+    volunteer: volunteers
+    organization: organizations
+    activity: activities
+    mission: missions
+    volunteer-group: volunteer-groups
+    volunteer-dashboard: volunteers-dashboard
+    organization-dashboard: organizations-dashboard
+    super-admin-dashboard: super-admins-dashboard
+    activity-coordinator: activity-coordinators
+    location: locations
+    datashare-volunteer-organization: datashare-volunteers-organizations
+    volunteer-organization: volunteers-organizations
+    postulation: postulations
+    attendace: attendances
+    review: reviews
+    notification: notifications
