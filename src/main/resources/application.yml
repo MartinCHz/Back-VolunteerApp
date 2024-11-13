@@ -1,11 +1,11 @@
 spring:
   application:
-    name: volunteer-app.asesordigital # Nuevo nombre de la aplicación
+    name: volunteer-app.asesordigital
 
   datasource:
-    url: jdbc:postgresql://db-postgresql-volunteerapp-do-user-10100634-0.e.db.ondigitalocean.com:25060/defaultdb
-    username: doadmin
-    password: AVNS_d2dvzrgSgfOd6J8wJPo
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -19,8 +19,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: activistas.constructivos08@gmail.com
-    password: cdzanoeomcarrqze
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
@@ -36,8 +36,8 @@ springdoc:
     version: 1.0
 
 social:
-  googleClientId: "142245667829-afpupoofnh363onmduragfrhduii4jj5.apps.googleusercontent.com"
-  googleClientSecret: "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"
+  googleClientId: ${GOOGLE_CLIENT_ID}
+  googleClientSecret: ${GOOGLE_CLIENT_SECRET}
 
 server:
   port: 8085
@@ -48,7 +48,6 @@ server:
     max-file-size: 10MB
     max-request-size: 10MB
     max-http-form-post-size: 10485760
-
 
 request-mapping:
   controller:
